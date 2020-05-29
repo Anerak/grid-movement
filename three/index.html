@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid Movement</title>
+    <style>
+        html {background-color: #1c1d26;}
+        #holder {display: flex; flex-flow: row wrap; justify-content: center;
+        width: 600px; height: 600px; margin: 0 auto; margin-top: 10%;
+        background-color: bisque;}
+        #holder div:not(#pj) {
+            display: flex;
+            flex: 1 0 33%;
+            outline: 1px dashed black;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        #pj {
+            border-radius: 50%;
+            background-color: black;
+            width: 50%;
+            height: 50%;
+            margin: 0 auto;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="holder">
+		<!--	Top row		-->
+        <div y="0" x="0"></div>
+        <div y="0" x="1"></div>
+        <div y="0" x="2"></div>
+		<!--	Middle row	-->
+        <div y="1" x="0"></div>
+        <div y="1" x="1"></div>
+        <div y="1" x="2"></div>
+		<!--	Bottom row	-->
+        <div y="2" x="0"></div>
+        <div y="2" x="1"></div>
+        <div y="2" x="2"></div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

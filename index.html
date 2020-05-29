@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid Movement Random</title>
+    <style>
+        html {background-color: #1c1d26;}
+        #holder {display: flex; flex-flow: row wrap; justify-content: center;
+        width: 720px; height: 600px; margin: 0 auto;
+        background-color: bisque;}
+        #holder div:not(#pj) {
+            display: flex;
+            flex: 1 0 10%;
+            outline: 1px dashed black;
+            justify-content: center;
+            align-items: center;
+        }
+        .block {
+            background-color: black;
+        }
+        #pj {
+            border-radius: 50%;
+            background-color: black;
+            width: 50%;
+            height: 50%;
+            margin: 0 auto;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="holder">
+		<!--	Top row		        -->
+        <div y="0" x="0"></div>
+        <div y="0" x="1"></div>
+        <div y="0" x="2"></div>
+        <div y="0" x="3"></div>
+        <div y="0" x="4"></div>
+        <div y="0" x="5"></div>
+        <div y="0" x="6"></div>
+        <div y="0" x="7"></div>
+        <div y="0" x="8"></div>
+        <div y="0" x="9"></div>
+		<!--	Middle first row	-->
+        <div y="1" x="0"></div>
+        <div y="1" x="1"></div>
+        <div y="1" x="2"></div>
+        <div y="1" x="3"></div>
+        <div y="1" x="4"></div>
+        <div y="1" x="5"></div>
+        <div y="1" x="6"></div>
+        <div y="1" x="7"></div>
+        <div y="1" x="8"></div>
+        <div y="1" x="9"></div>
+		<!--	Middle second row	-->
+        <div y="2" x="0"></div>
+        <div y="2" x="1"></div>
+        <div y="2" x="2"></div>
+        <div y="2" x="3"></div>
+        <div y="2" x="4"></div>
+        <div y="2" x="5"></div>
+        <div y="2" x="6"></div>
+        <div y="2" x="7"></div>
+        <div y="2" x="8"></div>
+        <div y="2" x="9"></div>
+        <!--    Middle third row    -->
+        <div y="3" x="0"></div>
+        <div y="3" x="1"></div>
+        <div y="3" x="2"></div>
+        <div y="3" x="3"></div>
+        <div y="3" x="4"></div>
+        <div y="3" x="5"></div>
+        <div y="3" x="6"></div>
+        <div y="3" x="7"></div>
+        <div y="3" x="8"></div>
+        <div y="3" x="9"></div>
+        <!--    Middle fourht row   -->
+        <div y="4" x="0"></div>
+        <div y="4" x="1"></div>
+        <div y="4" x="2"></div>
+        <div y="4" x="3"></div>
+        <div y="4" x="4"></div>
+        <div y="4" x="5"></div>
+        <div y="4" x="6"></div>
+        <div y="4" x="7"></div>
+        <div y="4" x="8"></div>
+        <div y="4" x="9"></div>
+        <!--    Bottom row          -->
+        <div y="5" x="0"></div>
+        <div y="5" x="1"></div>
+        <div y="5" x="2"></div>
+        <div y="5" x="3"></div>
+        <div y="5" x="4"></div>
+        <div y="5" x="5"></div>
+        <div y="5" x="6"></div>
+        <div y="5" x="7"></div>
+        <div y="5" x="8"></div>
+        <div y="5" x="9"></div>
+        <!---->
+        <div y="6" x="0"></div>
+        <div y="6" x="1"></div>
+        <div y="6" x="2"></div>
+        <div y="6" x="3"></div>
+        <div y="6" x="4"></div>
+        <div y="6" x="5"></div>
+        <div y="6" x="6"></div>
+        <div y="6" x="7"></div>
+        <div y="6" x="8"></div>
+        <div y="6" x="9"></div>
+        <!---->
+        <div y="7" x="0"></div>
+        <div y="7" x="1"></div>
+        <div y="7" x="2"></div>
+        <div y="7" x="3"></div>
+        <div y="7" x="4"></div>
+        <div y="7" x="5"></div>
+        <div y="7" x="6"></div>
+        <div y="7" x="7"></div>
+        <div y="7" x="8"></div>
+        <div y="7" x="9"></div>
+        <!---->
+        <div y="8" x="0"></div>
+        <div y="8" x="1"></div>
+        <div y="8" x="2"></div>
+        <div y="8" x="3"></div>
+        <div y="8" x="4"></div>
+        <div y="8" x="5"></div>
+        <div y="8" x="6"></div>
+        <div y="8" x="7"></div>
+        <div y="8" x="8"></div>
+        <div y="8" x="9"></div>
+        <!---->
+        <div y="9" x="0"></div>
+        <div y="9" x="1"></div>
+        <div y="9" x="2"></div>
+        <div y="9" x="3"></div>
+        <div y="9" x="4"></div>
+        <div y="9" x="5"></div>
+        <div y="9" x="6"></div>
+        <div y="9" x="7"></div>
+        <div y="9" x="8"></div>
+        <div y="9" x="9"></div>
+        <!---->
+        
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
