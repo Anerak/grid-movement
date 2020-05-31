@@ -1,5 +1,5 @@
 const divs = document.querySelectorAll('#holder div');
-const limits = {x: 9, y: 9}
+const limits = {x: 9, y: 9} // Modify this when you resize the grid.
 
 class Player {
     constructor() {
@@ -15,6 +15,7 @@ class Player {
     }
 }
 
+// Check direction of the player based on key pressed..
 function movePjHandler (e) {
     let direction = e.key;
     switch (direction) {
@@ -42,6 +43,7 @@ function movePjHandler (e) {
     moveDivHandler();
 }
 
+// Move the player div to another div if it's not blocked.
 function moveDivHandler() {
     divs.forEach((div) => {
         if (!div.classList.contains('block')) {
@@ -52,6 +54,7 @@ function moveDivHandler() {
     });
 }
 
+// Check if the new position is blocked.
 function checkBlock(x, y) {
     let proceed = true;
     divs.forEach((div) => {
@@ -64,6 +67,9 @@ function checkBlock(x, y) {
     return proceed;
 }
 
+// Toggle block in the clicked div.
+// If the player is there, it'll be moved to the next div.
+// Improve this.
 function blockDiv(e) {
     let target = e.target;
     if (target.classList.contains('block')) {
