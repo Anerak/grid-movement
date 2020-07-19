@@ -1,10 +1,10 @@
 let divs = [];
-let limits = {x: 9, y: 9} // Modify this when you resize the grid.
+let limits;
 
 class Player {
     constructor() {
-        this.x = 1;
-        this.y = 1;
+        this.x = 0;
+        this.y = 0;
         this.tag = this.representItself(this.x, this.y);
     }
 
@@ -13,16 +13,22 @@ class Player {
         tag.setAttribute('id', 'pj');
         return tag;
     }
+
+    resetPos() {
+      this.x = 0;
+      this.y = 0;
+    }
 }
 
 function initGrid(x, y) {
   limits = {x: x - 1, y: y - 1};
+  pj.resetPos();
   if (divs.length > 0) {
     divs.forEach((i) => i.removeEventListener('click', blockDiv));
     divs = [];
   }
-  let holder = document.getElementById('holder');
-  holder.innerHTML = null;
+  let grid = document.getElementById('grid');
+  grid.innerHTML = null;
   for (let i = 0; i < y; i++) {
     let row = document.createElement('DIV');
     row.classList.add('row');
@@ -33,40 +39,39 @@ function initGrid(x, y) {
       div.classList.add('square');
       row.appendChild(div);
     }
-    holder.appendChild(row);
+    grid.appendChild(row);
   }
   divs = document.querySelectorAll('.row .square')
   divs.forEach((i) => i.addEventListener('click', blockDiv));
+  moveDivHandler();
 }
 
 // Check direction of the player based on key pressed.
 function movePjHandler (e) {
-  console.log(`X: ${pj.x} Y: ${pj.y}`);
     let direction = e.key;
     switch (direction) {
         case 'ArrowUp':
             if (checkBlock(pj.x, pj.y - 1)) {
               pj.y -= 1;
               if (pj.y < 0) pj.y += 1;
-                //pj.y = pj.y - 1 >= 0 ? pj.y - 1 : 0;
             }
             break;
         case 'ArrowDown':
             if (checkBlock(pj.x, pj.y + 1)) {
               pj.y += 1;
               if (pj.y > limits.y) pj.y -= 1;
-                //pj.y = pj.y + 1 <= limits.y ? pj.y + 1 : limits.y;
             }
             break;
         case 'ArrowLeft':
             if (checkBlock(pj.x - 1, pj.y)) {
-                pj.x =
-                pj.x = pj.x - 1 >= 0 ? pj.x - 1 : 0;
+                pj.x -= 1;
+                if (pj.x < 0) pj.x += 1;
             }
             break;
         case 'ArrowRight':
             if (checkBlock(pj.x + 1, pj.y)) {
-                pj.x = pj.x + 1 <= limits.x ? pj.x + 1 : limits.x;
+              pj.x += 1;
+              if (pj.x > limits.x) pj.x -= 1;
             }
             break;
     }
@@ -113,7 +118,15 @@ function blockDiv(e) {
     }
 }
 
+function resizeGrid () {
+  let sizes = document.getElementsByName('size');
+  if ((sizes[0].value != "") || (sizes[1].value != "")) {
+    initGrid(sizes[0].value, sizes[1].value);
+  }
+}
+
 window.addEventListener('keydown', movePjHandler);
+document.getElementById('sizeBtn').addEventListener('click', resizeGrid);
 var pj = new Player;
 initGrid(3, 3);
 moveDivHandler();
